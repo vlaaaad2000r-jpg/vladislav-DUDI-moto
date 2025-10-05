@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MotoWorld</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      
+    }
+    header, footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+    
+    nav {
+      background: #444;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    section {
+      padding: 2rem;
+    }
+    h1, h2 {
+      color: #111;
+    }
+    .catalog ul {
+      list-style: none;
+      padding: 0;
+    }
+    .catalog li {
+      background: #fff;
+      margin: 0.5rem 0;
+      padding: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+    }
+    .catalog img {
+      width: 150px;
+      height: 100px;
+      object-fit: cover;
+      margin-right: 15px;
+      border-radius: 5px;
+    }
+    .contact-form {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin: auto;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #222;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .filters {
+      margin-bottom: 1rem;
+    }
+    .filters select {
+      padding: 0.5rem;
+      margin-right: 1rem;
+    }
+    .bike-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .bike-card {
+      background: #fff;
+      padding: 1rem;
+      width: 250px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+    .bike-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .bike-card button {
+      background-color: #444;
+      color: white;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .bike-card button:hover {
+      background-color: #222;
+    }
+    .bike-card:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MotoWorld</h1>
+    <p>Світ мотоциклів — у твоїх руках!</p>
+  </header>
+
+  <nav>
+    <a href="#catalog">Каталог</a>
+    <a href="#news">Новини</a>
+    <a href="#blog">Блог</a>
+    <a href="#contact">Контакти</a>
+  </nav>
+
+  <section id="bike-selector">
+    <h2>Вибір мотоцикла</h2>
+    <form>
+      <label for="type">Тип використання:</label>
+      <select id="type">
+        <option value="sport">Спортивний</option>
+        <option value="cruiser">Круїзер</option>
+        <option value="touring">Туристичний</option>
+      </select>
+      <label for="power">Потужність (к.с.):</label>
+      <input type="number" id="power" min="10" max="200" step="5">
+      <label for="price">Максимальна ціна (грн):</label>
+     <label for="price">Максимальна ціна ($):</label>
+      <input type="number" id="price" min="1000" max="50000" step="500">
+      <button type="submit">Знайти мотоцикл</button>
+        </form>
+  <button id="reset-filters" style="margin-top:10px;">Повернутись до каталогу</button>
+    </form>
+  </section>
+
+  <section id="catalog" class="catalog">
+    <h2>Каталог мотоциклів</h2>
+    <div class="bike-cards">
+      <div class="bike-card"  data-type="sport" data-power="200" data-price="25000">
+        <img src="https://superbikefactory.co.uk/media/wysiwyg/Yamaha_R1_Side_On.png" alt="Yamaha R1">
+        <h3>Yamaha R1</h3>
+        <p>Спортивний мотоцикл з агресивним дизайном для швидкості та витривалості.</p>
+        <a href="https://www.yamaha-motor.eu/ua/uk/motorcycles/supersport/pdp/r1-2024/" target="_blank"><button>Дізнатися більше</button></a>
+</div>
+
+      <div class="bike-card"data-type="touring" data-power="50" data-price="9000">
+        <img src="https://cdn.dealerspike.com/imglib/v1/800x600/imglib/Assets/Inventory/8B/59/8B59EE12-0B2F-4486-8717-0F460631A9F0.jpg" alt="Honda CB500F">
+        <h3>Honda CB500F</h3>
+        <p>Універсальний мотоцикл для міста та прогулянок.</p>
+        <a href="https://powersports.honda.com/motorcycle/standard/cb500f" target="_blank"><button>Дізнатися більше</button></a>
+      </div>
+      <div class="bike-card" data-type="cruiser" data-power="120" data-price="23000">
+        <img src="https://remmotorcycle.com/cdn/shop/articles/Harley-Davidson_Sportster_S_La_Revolution_de_la_Conduite_4_800x.jpg?v=1729084604" alt="Harley-Davidson Sportster">
+        <h3>Harley-Davidson Sportster</h3>
+        <p>Класичний круїзер для міських поїздок та подорожей.</p>
+        <a href="https://h-dkyiv.com.ua/" target="_blank"><button>Дізнатися більше</button></a>
+      </div>
+      <div class="bike-card"data-type="touring" data-power="140" data-price="19000">
+        <img src="https://www.advpulse.com/wp-content/uploads/2019/03/BMW-1250-GS-HP-adventure-motorcycle-5.jpg" alt="BMW R1250GS">
+        <h3>BMW R1250GS</h3>
+        <p>Потужний турист для далеких подорожей і пригод.</p>
+        <a href="https://www.bmw-motorrad.ru/ru/models/adventure/r1250gs.html" target="_blank"><button>Дізнатися більше</button></a>
+      </div>
+      <div class="bike-card"data-type="sport" data-power="180" data-price="17000">
+        <img src="https://lh3.googleusercontent.com/proxy/zjLz6LoBZdZqPWB-TjQ8IeUvgQq3XD-SW05lbxftVgxbjMwAwOfLpNkp2eJ6GWsQBaIrMh20a3mljApTNjL4Ld9YGW-lxmgOu6gNHuC3HXbS2YSQ9Cj8-tCzi6DQDJrYy1UOS7FERrOnSMTXo2ZMSmzMzK28_q10cAkQuDc-id5iSC6MMv16U4IM9lUZWMjHhA6HQeUI5A" alt="KTM 1290 Super Duke">
+        <h3>KTM 1290 Super Duke</h3>
+        <p>Байк для любителів сили та швидкості з безкомпромісним стилем.</p>
+        <a href="https://ktm.kharkov.ua/ua/1290-super-duke-r-2021" target="_blank"><button>Дізнатися більше</button></a>
+      </div>
+      <div class="bike-card"data-type="sport" data-power="190" data-price="18000">
+        <img src="https://motodom.ua/image/cache/catalog/Product_Pictures/MOTOrcycles/ZX10R/24MY_Ninja%20ZX-10R_GY1_STU%20%281%29-1066x800_150-800x800w.jpg">
+        <h3>Kawasaki Ninja ZX-10R</h3>
+        <p>Ви можете випередити всіх, але головний суперник — у вас самих. Для тих, хто готовий до випробувань, створено Ninja ZX-10R та Ninja ZX-10RR.</p>
+        <a href="https://motodom.ua/motocikli/kawasaki/new-official-kawasaki/motocikl-kawasaki-zx-10r" target="_blank"><button>Дізнатися більше</button></a>
+      </div>
+      <div class="bike-card"data-type="touring" data-power=" 105" data-price="6000">
+        <img src="https://motorcycle.co.ua/images/2023/06/07/new_6443_3b_large.jpg" alt="Kawasaki Z 750">
+        <h3>Kawasaki Z 750</h3>
+        <p>Kawasaki Z750 — це потужний міський naked із 748 см³ рядним 4-циліндровим двигуном (~106 к.с.), 6-ступеневою коробкою та агресивним дизайном. Вага ~200 кг, бак 18 л, швидкість до 230 км/год.</p>
+        <a href="https://procar-lemberg.com/brands/kawasaki/" target="_blank"><button>Дізнатися більше</button></a>
+      </div>
+      <div class="bike-card"data-type="sport" data-power=" 120" data-price="9000">
+        <img src="https://www.roadracingworld.com/wp-content/uploads/rrw/83945b1125528987.jpg" alt="Yamaha R6 limited edition">
+        <h3>Yamaha R6 Limited Edition</h3>
+        <p>Yamaha R6 Limited Edition — спеціальна версія знаменитого спортивного мотоцикла Yamaha R6.</p>
+        <a href="https://yamaha.vidi.ua/ua/model/yzf-r6/" target="_blank"><button>Дізнатися більше</button></a>
+      </div>
+      <div class="bike-card"data-type="touring" data-power=" 100" data-price="8000">
+        <img src="https://honda.autoua.net/media/catalog/2/1/p219321-1421158891.jpg" alt="Honda CB600F Hornet">
+        <h3>Honda CB600F Hornet</h3>
+        <p>CB600F Hornet — один із найбільш впливових "роздягнених" мотоциклів середньої ваги.</p>
+        <a href="https://honda.autoua.net/uk/motorcycles/cb600f-horent/#photo1" target="_blank"><button>Дізнатися більше</button></a>
+      </div>
+        <div class="bike-card"data-type="touring" data-power=" 45" data-price="7000">
+        <img src=https://ktm.kharkov.ua/files/images/units/big/FU_390-duke-2020-00or.png alt="390 DUKE">
+        <h3>390 DUKE</h3>
+        <p>KTM 390 DUKE - це чистий приклад того, що багатьох приваблює в вуличні мотоцикли. Ця Corner Rocket забезпечує максимальне задоволення і користь для користувача, приймаючи почесті всюди, де важлива маневреність. .</p>
+        <a href="https://ktm.kharkov.ua/ua/390-duke-2021" target="_blank"><button>Дізнатися більше</button></a>
+      </div>
+       <div class="bike-card"data-type="touring" data-power=" 40" data-price="8500">
+        <img src=https://yamaha.vidi.ua/uploads/media/dc_car_gallery/0004/22/thumb_321269_dc_car_gallery_big.jpeg alt="Yamaha MT-03">
+        <h3>Yamaha MT-03</h3>
+        <p>Новий MT-03 оснащений 2-циліндровим двигуном типу DOHC об'ємом 321 куб. см. Аналогічний двигун стоїть у спортивній моделі Yamaha YZF-R3. Всього за 6,5 секунд він здатний розігнати мотоцикл до 100 км/год.</p>
+        <a href=https://yamaha.vidi.ua/ua/model/mt-03/ target="_blank"><button>Дізнатися більше</button></a>
+      </div>
+       <div class="bike-card"data-type="touring" data-power=" 70" data-price="12000">
+        <img src=https://yamaha.vidi.ua/uploads/media/dc_car_gallery/0015/86/thumb_1485588_dc_car_gallery_big.jpeg alt="Yamaha MT-07">
+        <h3>Yamaha MT-07</h3>
+        <p>Останній MT-07 має найвищі характеристики, включаючи радіально встановлені передні гальмівні супорти, 41-мм перевернуту вилку та легкі колеса SpinForged.</p>
+        <a href=https://yamaha.vidi.ua/ua/model/mt-07-2025/ target="_blank"><button>Дізнатися більше</button></a>
+      </div>
+    </div>
+  </section>
+</script>
+
+<section id="custom">
+  <h2>Кастомізація</h2>
+  <p>Зроби свій байк унікальним — обери тюнінг під свій стиль!</p>
+  <div class="bike-cards">
+    <div class="bike-card">
+      <img src="https://atomic-shop.ua/cdn/shop/files/akrapovic-s-y9r21-eet.jpg?v=1754385882&width=800" alt="Вихлопи">
+      <h3>Вихлопні системи</h3>
+      <p>Легкі титан або карбон для кращого звучання і потужності.</p>
+      <a href="https://akrapovic.com" target="_blank"><button>Дізнатися більше</button></a>
+    </div>
+
+    <div class="bike-card">
+      <img src=https://www.justmebel.net/wp-content/uploads/2021/06/moto-sidenie-2.jpg alt="Сидіння">
+      <h3>Сидіння</h3>
+      <p>Комфортні та стильні сидіння для подорожей чи міста.</p>
+      <a href="https://revivalcycles.com" target="_blank"><button>Дізнатися більше</button></a>
+    </div>
+
+    <div class="bike-card">
+      <img src="https://atomic-shop.ua/cdn/shop/files/pagid-street-26_50c599cd-c967-4162-959d-9609e0aff3bc.jpg?v=1748354971&width=800" alt="Гальма">
+      <h3>Гальмівні системи</h3>
+      <p>Потужні супорти та диски для максимальної безпеки.</p>
+      <a href="https://www.brembo.com" target="_blank"><button>Дізнатися більше</button></a>
+    </div>
+
+    <div class="bike-card">
+      <img src="https://ae04.alicdn.com/kf/S5536d0e6244b4d839f1033b4f5da253fK.jpg_480x480.jpg" alt="Обвіси">
+      <h3>Обвіси та обтічники</h3>
+      <p>Аеродинамічні обвісні комплекти для стилю та захисту.</p>
+      <a href="https://www.rizoma.com" target="_blank"><button>Дізнатися більше</button></a>
+    </div>
+    </div>
+</section>
+  <section id="news">
+    <section id="motorcycle-tours">
+<h2>Мотоподорожі</h2>
+  <ul>
+    <li>🏍️ Київ — Львів: найкращі місця для відпочинку на мотоциклі</li>
+    <li>🏍️ Чернівці — Карпати: маршрут для досвідчених мотоциклістів</li>
+    <li>🏍️ Одеса — Крим: літній маршрут для туристів на байках</li>
+  </ul>
+  <a href="https://www.mototravel.ua/" target="_blank"><button>Дізнатися більше</button></a>
+</section>
+    <h2>Новини</h2>
+    <ul>
+      <li>🔥 Ducati представила новий Monster 2025</li>
+      <li>🛠️ Yamaha анонсує оновлення для MT-09</li>
+      <li>🏁 MotoGP 2025: Результати першого етапу</li>
+    </ul>
+  </section>
+<section id="blog">
+    <h2>Блог</h2>
+    <ul>
+      <li>Як обрати свій перший байк</li>
+      <li>ТОП-5 бюджетних мотоциклів для міста</li>
+      <li>Що взяти з собою в мотоподорож</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Контакти</h2>
+    <p>Email: support@motoworld.com</p>
+    <p>Телефон: +380 99 123 4567</p>
+    <p>Соцмережі: Instagram | Facebook | YouTube</p>
+    <div class="contact-form">
+      <h3>Напишіть нам</h3>
+      <form>
+        <input type="text" placeholder="Ваше ім’я" required>
+        <input type="email" placeholder="Ваш Email" required>
+        <textarea placeholder="Ваше повідомлення" rows="4" required></textarea>
+        <button type="submit">Надіслати</button>
+      </form>
+    </div>
+  </section>
+
+<footer>
+  <p>&copy; 2025 MotoWorld. Всі права захищені.</p>
+  <p>
+    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968776.png" 
+         alt="Instagram" 
+         style="width:20px; vertical-align:middle; margin-right:5px;">
+    Наш Instagram: <a href="https://www.instagram.com/MotoWorld/" target="_blank">MotoWorld</a>
+  </p>
+</footer>
+  </footer>
+  <script src="script.js"></script>
+</body>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector("#bike-selector form");
+  const bikes = document.querySelectorAll(".bike-card");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const type = document.getElementById("type").value;
+    const power = parseInt(document.getElementById("power").value) || 0;
+    const price = parseInt(document.getElementById("price").value) || 0;
+
+    let foundExact = false;
+
+    bikes.forEach(bike => {
+      const bikeType = bike.dataset.type;
+      const bikePower = parseInt(bike.dataset.power);
+      const bikePrice = parseInt(bike.dataset.price);
+
+      // Перевірка точного збігу
+      if (bikeType === type && bikePower >= power && bikePrice <= price) {
+        bike.style.display = "block";
+        foundExact = true;
+      } else {
+        bike.style.display = "none";
+      }
+    });
+
+    // Якщо точних варіантів немає, показати схожі
+    if (!foundExact) {
+      bikes.forEach(bike => {
+        const bikePower = parseInt(bike.dataset.power);
+        const bikePrice = parseInt(bike.dataset.price);
+
+        // Показуємо схожі варіанти +/- 20% потужності і ціни
+        const powerRange = [power * 0.8, power * 1.2];
+        const priceRange = [price * 0.8, price * 1.2];
+
+        if (bikePower >= powerRange[0] && bikePower <= powerRange[1] &&
+            bikePrice >= priceRange[0] && bikePrice <= priceRange[1]) {
+          bike.style.display = "block";
+        }
+      });
+    }
+  });
+});
+</script>
+
+
+
+</html>
